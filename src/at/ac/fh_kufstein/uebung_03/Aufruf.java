@@ -5,9 +5,12 @@
  */
 package at.ac.fh_kufstein.uebung_03;
 
+import at.ac.fh_kufstein.uebung_03.Classes.Benennbar;
 import at.ac.fh_kufstein.uebung_03.Classes.Boat;
 import at.ac.fh_kufstein.uebung_03.Classes.Car;
+import at.ac.fh_kufstein.uebung_03.Classes.CarAbstract;
 import at.ac.fh_kufstein.uebung_03.Classes.Color;
+import at.ac.fh_kufstein.uebung_03.Classes.Liste;
 
 /**
  *
@@ -27,6 +30,37 @@ public class Aufruf {
         System.out.println(bmw.toString());
         System.out.println(audi.toString());
         System.out.println(titanic.toString());
+        
+        Benennbar namedCar = new Car((short)4, (short)4, Color.BLACK, (short)300, (short)3);
+        namedCar.setName("Prototyp");
+        System.out.println(namedCar.getName());
+        
+        
+        CarAbstract carNamed = new CarAbstract((short)4, (short)4, Color.BLUE, (short)150, (short)5);
+        carNamed.setName("Prototyp2");
+        System.out.println(carNamed.getName());
+        
+        
+        
+//        Liste<Double> stack = new Liste(10);
+//        stack.push(2.0);
+//        stack.push(5.0);
+//        stack.push(200.0);
+//        
+//        while(!stack.isEmpty())
+//        {
+//            System.out.println(stack.pop());
+//        }
+        
+        Liste<CarAbstract> stack = new Liste(10);
+        stack.push(new CarAbstract((short)4, (short)4, Color.BLACK, (short)200, (short)3));
+        stack.push(new CarAbstract((short)2, (short)4, Color.GREY, (short)60, (short)3));
+        
+        while(!stack.isEmpty())
+        {
+            System.out.println(stack.pop());
+        }
+        
     }
     
 }

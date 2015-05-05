@@ -9,8 +9,13 @@ package at.ac.fh_kufstein.uebung_03.Classes;
  *
  * @author Hannes
  */
-public class Vehicle implements Benennbar
+abstract class VehicleAbstract 
 {
+    public abstract void setName(String name);
+    public abstract String getName();
+    
+    
+    
     private short wheels;
     private Color color;
     private short ps;
@@ -93,7 +98,7 @@ public class Vehicle implements Benennbar
         this.speed = speed;
     }
 
-    public Vehicle(short wheels, Color color, short ps, short doors, boolean started, short speed) {
+    public VehicleAbstract(short wheels, Color color, short ps, short doors, boolean started, short speed) {
         this.wheels = wheels;
         this.color = color;
         this.ps = ps;
@@ -101,21 +106,4 @@ public class Vehicle implements Benennbar
         this.started = started;
         this.speed = speed;
     }
-
-    protected String FName;
-
-    @Override
-    public String getName() {
-        return FName;
-    }
-
-    @Override
-    public void setName(String name) {
-        FName = name;
-    }
-    
-
-    
-    
-    
 }
